@@ -1,4 +1,4 @@
-from src.linked_list import LinkedList
+from src.linkedlist import LinkedList
 
 if __name__ == '__main__':
     # Создаем пустой односвязный список
