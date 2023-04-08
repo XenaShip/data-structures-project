@@ -20,3 +20,19 @@ class TestLinkedList(unittest.TestCase):
         my_list.insert_at_end(3)
         my_list.insert_beginning(0)
         assert my_list.tail.num == 0
+
+
+    def test_to_list(self):
+        my_list = LinkedList()
+        my_list.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+        my_list.insert_at_end({'id': 2, 'username': 'mik.roz'})
+        lst = my_list.to_list()
+        self.assertEqual(lst, [{'id': 1, 'username': 'lazzy508509'}, {'id': 2, 'username': 'mik.roz'}])
+
+    def test_get_data_by_id(self):
+        my_list = LinkedList()
+        my_list.insert_at_end('idusername')
+        my_list.insert_at_end({'id': 2, 'username': 'mosh_s'})
+        user_data = my_list.get_data_by_id(2)
+        assert 'Данные не являются словарем или в словаре нет id.'
+        self.assertEqual(user_data, {'id': 2, 'username': 'mosh_s'})
